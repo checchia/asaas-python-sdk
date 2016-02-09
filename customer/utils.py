@@ -17,6 +17,7 @@ def get_customer(customer_id='', access_token=''):
     url = 'https://www.asaas.com/api/v2/customers/' + customer_id
     headers = {'access_token': access_token}
     response = requests.get(url, headers=headers)
+    return response
 
 def update_customer(customer_id='', data=None, access_token=''):
     """
@@ -36,7 +37,7 @@ def delete_customer(customer_id='', access_token=''):
     response = requests.delete(url, headers=headers)
     return response
 
-def list_customers(customer_id='', access_token=''):
+def list_customers(access_token=''):
     """
     List all customers registered in your account
     """
