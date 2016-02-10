@@ -8,7 +8,7 @@ def create_customer(data=None, access_token=''):
     url = 'https://www.asaas.com/api/v2/customers'
     headers = {'access_token': access_token}
     response = requests.post(url, data=json.dumps(data), headers=headers)
-    return response
+    return {'status_code': response.status_code, 'content': response.content})
 
 def get_customer(customer_id='', access_token=''):
     """
@@ -17,7 +17,7 @@ def get_customer(customer_id='', access_token=''):
     url = 'https://www.asaas.com/api/v2/customers/' + customer_id
     headers = {'access_token': access_token}
     response = requests.get(url, headers=headers)
-    return response
+    return {'status_code': response.status_code, 'content': response.content})
 
 def update_customer(customer_id='', data=None, access_token=''):
     """
@@ -26,7 +26,7 @@ def update_customer(customer_id='', data=None, access_token=''):
     url = 'https://www.asaas.com/api/v2/customers/' + customer_id
     headers =	{'access_token': access_token}
     response = requests.post(url, data=json.dumps(data), headers=headers)
-    return response
+    return {'status_code': response.status_code, 'content': response.content})
 
 def delete_customer(customer_id='', access_token=''):
     """
@@ -35,7 +35,7 @@ def delete_customer(customer_id='', access_token=''):
     url = 'https://www.asaas.com/api/v2/customers/' + customer_id
     headers =	{'access_token': access_token}
     response = requests.delete(url, headers=headers)
-    return response
+    return {'status_code': response.status_code, 'content': response.content})
 
 def list_customers(access_token=''):
     """
@@ -44,4 +44,4 @@ def list_customers(access_token=''):
     url = 'https://www.asaas.com/api/v2/customers'
     headers =   {'access_token': access_token}
     response = requests.get(url, headers=headers)
-    return response
+    return {'status_code': response.status_code, 'content': response.content})
